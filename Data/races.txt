@@ -3,4 +3,3 @@ Kinsale, 30
 Newmarket, 29
 Youghal, 29.5
 Castletownbere, 32.5
-Test Maksim, 31.2
