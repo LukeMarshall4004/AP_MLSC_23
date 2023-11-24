@@ -43,9 +43,9 @@ def runners_data():
 
 def race_results(races_location):
     for i in range(len(races_location)):
-        print(f"{i}: {races_location[i]}")
+        print(f"{i+1}: {races_location[i]}")
     user_input = read_integer_between_numbers("Choice > ", 1, len(races_location))
-    venue = races_location[user_input - 1]
+    venue = races_location[user_input - 1] #
     id, time_taken = reading_race_results(venue)
     return id, time_taken, venue
 
@@ -54,8 +54,16 @@ def race_venues():
     with open("races.txt") as input:
         lines = input.readlines()
     races_location = []
+    races_winning_time = [] # 2nd list for the winning line
     for line in lines:
-        races_location.append(line.strip("\n"))
+        line=line.strip()
+        parts = line.split(',') # split the location and the winning time1
+        
+        location = parts[0]
+        winning_time = parts[1]
+        races_location.append(location)
+        races_winning_time.append(winning_time)
+
     return races_location
 
 
