@@ -1,3 +1,5 @@
+
+
 def read_integer_between_numbers(prompt, mini, maximum):
     while True:
         try:
@@ -42,12 +44,15 @@ def runners_data():
 
 
 def race_results(races_location):
+
+    location, venue_time = races_location.split(",")
+
     for i in range(len(races_location)):
         print(f"{i}: {races_location[i]}")
     user_input = read_integer_between_numbers("Choice > ", 1, len(races_location))
-    venue = races_location[user_input - 1]
+    venue = races_location[user_input]
     id, time_taken = reading_race_results(venue)
-    return id, time_taken, venue
+    return id, time_taken, venue, location
 
 
 def race_venues():
@@ -121,7 +126,8 @@ def competitors_by_county(name, id):
 
 
 def reading_race_results(location):
-    with open(f"{location}.txt") as input_type:
+
+    with open(f"{race_venue}.txt") as input_type:
         lines = input_type.readlines()
     id = []
     time_taken = []
@@ -167,14 +173,16 @@ def relevant_runner_info(runners_name, runners_id):
 
 
 def convert_time_to_minutes_and_seconds(time_taken):
-    MINUTE = 50
+    MINUTE = 60 # 50 => 60
     minutes = time_taken // MINUTE
     seconds = time_taken % MINUTE
     return minutes, seconds
 
 
 def sorting_where_runner_came_in_race(location, time):
-    with open(f"{location}.txt") as input_type:
+
+    
+    with open(f"{race_venue}.txt") as input_type:
         lines = input_type.readlines()
     time_taken = []
     for line in lines:
@@ -184,6 +192,8 @@ def sorting_where_runner_came_in_race(location, time):
 
     time_taken.sort()
     return time_taken.index(time) + 1, len(lines)
+
+
 
 
 def displaying_race_times_one_competitor(races_location, runner, id):
@@ -251,3 +261,4 @@ def main():
 
 
 main()
+
