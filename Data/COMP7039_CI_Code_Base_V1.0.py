@@ -69,7 +69,7 @@ def winner_of_race(id, time_taken):
 
 
 def display_races(id, time_taken, venue, fastest_runner):
-    MINUTE = 50
+    MINUTE = 60 #Changed to 50 => 60
     print(f"Results for {venue}")
     print(f"="*37)
     minutes = []
