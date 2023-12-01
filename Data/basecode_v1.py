@@ -332,6 +332,7 @@ def main():
             runner, id = relevant_runner_info(runners_name, runners_id)
             display_race_times_one_competitor(races_location, runner, id)
         elif input_menu == 6:
+            print("Testing")
             displaying_runners_who_have_won_at_least_one_race(races_location, runners_name, runners_id)
         elif input_menu == 7:
             display_runners_without_podium(races_location, runners_name, runners_id)
