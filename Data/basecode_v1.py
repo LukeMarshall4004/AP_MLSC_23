@@ -336,7 +336,7 @@ def main():
             print("Testing")
             displaying_runners_who_have_won_at_least_one_race(races_location, runners_name, runners_id)
         elif input_menu == 7:
-            print("testing")
+            print("testing 2")
             display_runners_without_podium(races_location, runners_name, runners_id)
 
         print()
