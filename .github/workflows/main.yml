@@ -7,4 +7,4 @@ jobs:
     - uses: actions/checkout@v2
     - name: Python Test
       run:
-        python -m unittest tests.test
+        python -m unittest basecode_v1.test
