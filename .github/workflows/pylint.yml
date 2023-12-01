@@ -20,4 +20,4 @@ jobs:
         pip install pylint
     - name: Analysing the code with pylint
       run: |
-        pylint $(git ls-files 'test_basecode_v1.py') #'*.py'
+        pylint $(git ls-files 'test_basecode_v1.py') 
