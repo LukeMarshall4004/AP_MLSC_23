@@ -328,6 +328,7 @@ def main():
         elif input_menu == 4:
             displaying_winners_of_each_race(races_location)
         elif input_menu == 5:
+            print("Show the race times for each competitor:")
             runner, id = relevant_runner_info(runners_name, runners_id)
             display_race_times_one_competitor(races_location, runner, id)
         elif input_menu == 6:
